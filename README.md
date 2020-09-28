@@ -6,7 +6,7 @@ Red Hat Service Mesh Homework for Adv Red Hat Service Mesh Course
 * *Company*: Semperti [Red Hat Partner]
 * *Email*: <gonzalo.acosta@semperti.com>
 
-## 2. POC Environment
+### 1. POC Environment
 
 *IMPORTANT!!! Expiration Lab 10/01/20 11:47 EDT* 
 
@@ -43,7 +43,7 @@ Server Version: 4.3.3
 Kubernetes Version: v1.16.2
 ```
 
-## 2. Prereq
+### 2. Prereq
 
 - Openshift Cluster Up
 - Openshift Client Work
@@ -53,7 +53,7 @@ git clone https://github.com/gonzaloacosta/redhat-service-mesh
 chmod +x scripts/*.sh
 ```
 
-## 3. Business Application
+### 3. Business Application
 
 Install Bookinfo Application
 
@@ -61,7 +61,7 @@ Install Bookinfo Application
 sh ./scripts/1-bookinfo-deploy.sh
 ```
 
-## 4. OpenShift Service Mesh Operator and Control Plane
+### 4. OpenShift Service Mesh Operator and Control Plane
 
 All the operators was installed from Official sources except Red Hat Service Mesh Operator
 
@@ -71,46 +71,49 @@ All the operators was installed from Official sources except Red Hat Service Mes
 * Installing the Jaeger Operator
 * Installing the Kiali Operator
 
-### 4.2 Installing the Red Hat OpenShift Service Mesh Operator
+* Installing the Red Hat OpenShift Service Mesh Operator
 
 ```bash
 $ sh ./scripts/2-service-mesh-operator-deploy.sh
 ```
-### 4.3 Installing Control Plane
+* Installing Control Plane
 
 ```bash
 $ sh ./scripts/3-redhat-service-mesh-controlplane-deploy.sh
 ```
 
-## 5. ServiceMeshMemberRoll
+### 5. ServiceMeshMemberRoll
 
-### 5.1 Install a ServiceMeshMemberRoll resource with bookinfo as its only member.
+* Install a ServiceMeshMemberRoll resource with bookinfo as its only member.
 
 ```bash
 $ sh ./scripts/4-service-mesh-member-roll.sh
 ```
 
-### 5.2 Inject envoy to bookinfo deployments
+* Inject envoy to bookinfo deployments
 
 ```bash
 $ sh ./scripts/5-inject-envoy-proxy.sh
 ```
 
-## 6. mTLS Security
+### 6. mTLS Security
 
-### Create gateway and certs
+* Create gateway and certs
 
 ```bash
 $ sh ./scritps/6-certificates-istio-ingressgateway.sh
 ```
-
-### Product Page
+* All Red Hat Service Mesh Resources for bookinfo
+  * Gateways
+  * VirtualServices
+  * DestinationRules
+  * Policy
 
 ```bash
 $ sh ./7-istio-resources-bookinfo.sh
 ```
 
-### Grant permission to user1 for mesh-admin
+* Grant permission to user1 for mesh-admin
 
 ```bash
 $ sh ./scripts/8-grant-permission-user1.sh
